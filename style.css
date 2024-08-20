@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h4, h3, p, footer p {
+    color: #fff; /* Set the color to white */
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('road.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.containers {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.containerss {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: rgb(11, 48, 62);
+    color: #fff;
+    padding: 25px 0;
+}
+
+header h1 {
+    float: left;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: armenian;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #0a7478;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #e1a71f;
+}
+
+.features {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.features h2 {
+    margin-bottom: 20px;
+}
+
+.feature-item {
+    margin-bottom: 40px;
+}
+
+.feature-item img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #070505;
+    color: #fff;
+    text-align: center;
+    padding: -5px 0;
+}
+
+footer p {
+    margin: 0;
+}

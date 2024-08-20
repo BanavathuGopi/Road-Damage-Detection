@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Damage Detection Result</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Road Damage Detection Result</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Uploaded Image and Road Damage Statistics</h2>
+        <div class="result-content">
+            <img id="uploadedImage" alt="Uploaded Road Image" />
+            <div class="chart-container">
+                <canvas id="damageChart" width="400" height="400"></canvas>
+            </div>
+        </div>
+        <div id="details">
+            <h3>Details:</h3>
+            <p>Total Images Analyzed: <span id="totalImages">0</span></p>
+            <p>Percentage of Road Damage: <span id="damagePercentage">0</span>%</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Road Damage Detection System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const resultData = JSON.parse(localStorage.getItem('resultData'));
+            if (resultData) {
+                document.getElementById('uploadedImage').src = resultData.imageUrl;
+                const totalImages = resultData.totalImages || 1;
+                const damagedImages = resultData.damagedImages || 0;
+                const damagePercentage = (damagedImages / totalImages) * 100;
+
+                document.getElementById('totalImages').innerText = totalImages;
+                document.getElementById('damagePercentage').innerText = damagePercentage.toFixed(2);
+                const ctx = document.getElementById('damageChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Undamaged', 'Damaged'],
+                        datasets: [{
+                            label: 'Road Damage',
+                            data: [totalImages - damagedImages, damagedImages],
+                            backgroundColor: ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                });
+            } else {
+                console.error('No result data found in localStorage.');
+            }
+        });
+    </script>
+</body>
+</html>

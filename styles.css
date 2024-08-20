@@ -1,0 +1,102 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header h1 {
+    float: left;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#details {
+    margin-top: 20px;
+}
+
+#details h3 {
+    margin-bottom: 10px;
+}
+
+#details ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+#details ul li {
+    margin-bottom: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Style for result content */
+.result-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.result-content img {
+    max-width: 45%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.chart-container {
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#damageChart {
+    max-width: 100%;
+    height: 400px; 
+    display: block;
+}
